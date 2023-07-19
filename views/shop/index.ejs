@@ -1,0 +1,377 @@
+<%- include('../includes/head.ejs', {pageTitle: pageTitle}) %>
+  </head>
+  <body>
+    <%- include('../includes/nav.ejs', {isLogged: isLogged, path: path}) %>
+    <main>
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-text-container">
+            <h1 class="hero-heading">
+              Let us shoulder the mess, while you shop without worry!
+            </h1>
+            <div class="btn-container">
+              <a href="<%= isLogged ? '/store' : '/signup' %>" class="cta-btn">
+                <%= isLogged ? 'Store' : 'Sign Up' %></a
+              >
+              <a href="#statistics" class="learn-more-btn">Learn More &darr;</a>
+            </div>
+            <div class="customers">
+              <div class="customer-img-container">
+                <img
+                  src="/images/customer-1.jpg"
+                  alt="customer portrait"
+                  class="customer-img"
+                />
+                <img
+                  src="/images/customer-2.jpg"
+                  alt="customer portrait"
+                  class="customer-img"
+                />
+                <img
+                  src="/images/customer-3.jpg"
+                  alt="customer portrait"
+                  class="customer-img"
+                />
+                <img
+                  src="/images/customer-7.jpg"
+                  alt="customer portrait"
+                  class="customer-img"
+                />
+                <img
+                  src="/images/customer-8.jpg"
+                  alt="customer portrait"
+                  class="customer-img"
+                />
+                <img
+                  src="/images/customer-9.jpg"
+                  alt="customer portrait"
+                  class="customer-img"
+                />
+              </div>
+              <p class="customer-text">
+                <span>100000+</span> partners worldwide!
+              </p>
+            </div>
+          </div>
+          <div class="hero-image-container">
+            <img
+              src="/images/online-shopping1.jpg"
+              alt="A lady with shopping bags and a laptop on the table"
+              class="hero-img"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-in">
+        <h2 class="secondary-heading">As Featured in</h2>
+        <div class="featured-container">
+          <img src="/images/forbes.png" alt="forbes logo" class="logo-img" />
+          <img
+            src="/images/business-insider.png"
+            alt="forbes logo"
+            class="logo-img"
+          />
+          <img src="/images/usa-today.png" alt="forbes logo" class="logo-img" />
+          <img
+            src="/images/the-new-york-times.png"
+            alt="forbes logo"
+            class="logo-img"
+          />
+          <img
+            src="/images/techcrunch.png"
+            alt="forbes logo"
+            class="logo-img"
+          />
+        </div>
+      </section>
+
+      <section class="categories">
+        <h2 class="secondary-heading">Shop by category</h2>
+        <div class="categories-container">
+          <a href="/store/tech" class="category-header"
+            ><div class="category tech">
+              <h2>Tech</h2>
+            </div></a
+          >
+          <a href="/store/books" class="category-header"
+            ><div class="category books">
+              <h2>Books</h2>
+            </div></a
+          >
+          <a href="/store/home" class="category-header"
+            ><div class="category home">
+              <h2>Home Appliances</h2>
+            </div></a
+          >
+          <a href="/store/clothes" class="category-header"
+            ><div class="category clothes">
+              <h2>Clothes</h2>
+            </div></a
+          >
+          <a href="/store/toys" class="category-header"
+            ><div class="category toys">
+              <h2>Toys</h2>
+            </div></a
+          >
+          <a href="/store/fitness" class="category-header"
+            ><div class="category fitness">
+              <h2>Fitness</h2>
+            </div></a
+          >
+        </div>
+      </section>
+
+      <section class="trending">
+        <h2 class="secondary-heading">Trending This Week</h2>
+        <div class="trending-container">
+          <div class="trending-item">
+            <img
+              src="/images/products/headphones.jpg"
+              alt="headphones"
+              class="product-img"
+            />
+            <div class="info-container">
+              <h3 class="product-title">Headphones</h3>
+              <div class="rating-container">
+                <ion-icon name="star-outline" class="star-icon"></ion-icon>
+                <span>4.5 (122)</span>
+              </div>
+            </div>
+            <div class="price-container">
+              <span>$<strong class="price">344</strong></span>
+              <a href="/" class="see-more-btn">More</a>
+            </div>
+          </div>
+          <div class="trending-item">
+            <img
+              src="/images/products/phone.jpg"
+              alt="phone"
+              class="product-img"
+            />
+            <div class="info-container">
+              <h3 class="product-title">phone</h3>
+              <div class="rating-container">
+                <ion-icon name="star-outline" class="star-icon"></ion-icon>
+                <span>4.5 (122)</span>
+              </div>
+            </div>
+            <div class="price-container">
+              <span>$<strong class="price">344</strong></span>
+              <a href="/" class="see-more-btn">More</a>
+            </div>
+          </div>
+          <div class="trending-item">
+            <img
+              src="/images/products/laptop.jpg"
+              alt="laptop"
+              class="product-img"
+            />
+            <div class="info-container">
+              <h3 class="product-title">laptop</h3>
+              <div class="rating-container">
+                <ion-icon name="star-outline" class="star-icon"></ion-icon>
+                <span>4.5 (122)</span>
+              </div>
+            </div>
+            <div class="price-container">
+              <span>$<strong class="price">344</strong></span>
+              <a href="/" class="see-more-btn">More</a>
+            </div>
+          </div>
+          <div class="trending-item">
+            <img
+              src="/images/products/book.jpg"
+              alt="book"
+              class="product-img"
+            />
+            <div class="info-container">
+              <h3 class="product-title">book</h3>
+              <div class="rating-container">
+                <ion-icon name="star-outline" class="star-icon"></ion-icon>
+                <span>4.5 (122)</span>
+              </div>
+            </div>
+            <div class="price-container">
+              <span>$<strong class="price">344</strong></span>
+              <a href="/" class="see-more-btn">More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features">
+        <h2 class="secondary-heading">Features</h2>
+        <div class="features-container">
+          <div class="feature-div">
+            <ion-icon name="help-outline" class="feature-icon"></ion-icon>
+            <p class="feature-text">
+              If you are having any issues, our customer service is ready to
+              assist you in real time
+            </p>
+          </div>
+          <div class="feature-div">
+            <ion-icon name="location-outline" class="feature-icon"></ion-icon>
+            <p class="feature-text">
+              No more worrying over the shipments &dash; you can monitor the
+              location of your shippment
+            </p>
+          </div>
+          <div class="feature-div">
+            <ion-icon name="card-outline" class="feature-icon"></ion-icon>
+            <p class="feature-text">
+              We support different popular methods of payment such as PayPal,
+              VISA, MasterCard and many more
+            </p>
+          </div>
+          <div class="feature-div">
+            <ion-icon name="call-outline" class="feature-icon"></ion-icon>
+            <p class="feature-text">
+              We will help you establish a direct contact with the buyer/seller,
+              in case of any issues
+            </p>
+          </div>
+        </div>
+        <p class="feature-section-text">
+          Do you want to make money with us?
+          <a href="/" class="partner-link">Become a partner</a>
+        </p>
+      </section>
+
+      <section class="testimonials">
+        <h2 class="secondary-heading">Testimonials</h2>
+        <div class="testimonials-container">
+          <h2 class="testimonial-heading">What our users say</h2>
+          <div class="testimonial-div">
+            <div class="testimonial-img-container">
+              <img
+                src="/images/customer-1.jpg"
+                alt="portrait"
+                class="testimonial-img"
+              />
+              <div>
+                <p class="name">Adam Hosein</p>
+                <p class="occupation">UN Negotiator</p>
+              </div>
+            </div>
+            <div class="testimonial-text">
+              <blockquote>
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Accusantium, vitae! Natus quibusdam aspernatur sunt ut quidem
+                voluptatem a voluptates asperiores porro"
+              </blockquote>
+            </div>
+          </div>
+          <div class="testimonial-div">
+            <div class="testimonial-img-container">
+              <img
+                src="/images/customer-2.jpg"
+                alt="portrait"
+                class="testimonial-img"
+              />
+              <div>
+                <p class="name">Camilla Denoir</p>
+                <p class="occupation">Load Manager</p>
+              </div>
+            </div>
+            <div class="testimonial-text">
+              <blockquote>
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Accusantium, vitae! Natus quibusdam aspernatur sunt ut quidem
+                voluptatem a voluptates asperiores porro"
+              </blockquote>
+            </div>
+          </div>
+          <div class="testimonial-div">
+            <div class="testimonial-img-container">
+              <img
+                src="/images/customer-3.jpg"
+                alt="portrait"
+                class="testimonial-img"
+              />
+              <div>
+                <p class="name">Roe Jogan</p>
+                <p class="occupation">DMT Enjoyer</p>
+              </div>
+            </div>
+            <div class="testimonial-text">
+              <blockquote>
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Accusantium, vitae! Natus quibusdam aspernatur sunt ut quidem
+                voluptatem a voluptates asperiores porro"
+              </blockquote>
+            </div>
+          </div>
+          <div class="testimonial-div">
+            <div class="testimonial-img-container">
+              <img
+                src="/images/customer-7.jpg"
+                alt="portrait"
+                class="testimonial-img"
+              />
+              <div>
+                <p class="name">Lex Fridman</p>
+                <p class="occupation">Artificial Intelligence</p>
+              </div>
+            </div>
+            <div class="testimonial-text">
+              <blockquote>
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Accusantium, vitae! Natus quibusdam aspernatur sunt ut quidem
+                voluptatem a voluptates asperiores porro"
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="statistics-section">
+        <h2 class="secondary-heading" id="statistics">Statistics</h2>
+        <div class="statistics-container">
+          <div class="statistic-col">
+            <ion-icon
+              name="bar-chart-outline"
+              class="statistics-icon"
+            ></ion-icon>
+            <div class="stat-textbox">
+              <p class="stat-text">
+                About <span class="stats-imp">15 thousand</span> new users join
+                our website every month. Our community is progressing in a
+                positive direction
+              </p>
+            </div>
+          </div>
+          <div class="statistic-col">
+            <ion-icon
+              name="stats-chart-outline"
+              class="statistics-icon"
+            ></ion-icon>
+            <div class="stat-textbox">
+              <p class="stat-text">
+                On average,
+                <span class="stats-imp">40 thousand</span> transactions are
+                completed through our website every single day
+              </p>
+            </div>
+          </div>
+          <div class="statistic-col last--col">
+            <ion-icon
+              name="pie-chart-outline"
+              class="statistics-icon"
+            ></ion-icon>
+            <div class="stat-textbox">
+              <p class="stat-text">
+                <span class="stats-imp">About 96%</span> of our users who
+                actively use the website leave positive reviews about us and our
+                partners
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../includes/footer.ejs') %>
+    <%- include('../includes/icon.ejs') %>
+  </body>
+</html>

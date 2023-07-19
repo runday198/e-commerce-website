@@ -1,0 +1,45 @@
+<%- include('../includes/head.ejs', {pageTitle: pageTitle}) %>
+<link rel="stylesheet" href="/css/account.css">
+<link rel="stylesheet" href="/css/stars.css">
+</head>
+<body>
+  <%- include('../includes/nav.ejs', {path: path, isLogged: isLogged}) %>
+  <div class="account-container">
+    <%- include('../includes/profile.ejs', {path: path}) %>
+    <main class="product-col">
+      <h2 class="profile-heading">Product #<%= product.id %></h2>
+      <div class="product-container">
+        <div class="image-box">
+          <img src="/images/1676268696270-online-shopping2.jpg"
+          alt="laptop"
+          class="product-image">
+        </div>
+        <div class="description-box">
+          <div>
+            <h2><%= product.title %></h2>
+            <div class="rating-container">
+              <p class="price"><span>$</span><%= product.price %></p>
+            </div>
+            <p class="count"><%= product.storageQuantity %> units in stock</p>
+            <div class="description-container">
+              <p class="long-description"><%= product.fullDesc %>
+            </div>
+            <div class="button-box">
+              <form action="/cart" method="post">
+                <input type="hidden" name="productId" value="<%= product.id %>">
+                <button type="submit" class="product-btn delete--btn">Add To Cart</button>
+              </form>
+            </div>
+            
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <%- include('../includes/footer.ejs') %>
+  <%- include('../includes/icon.ejs') %>
+  <script src="/js/rating.js"></script>
+</body>

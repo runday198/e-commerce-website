@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sassy+Frass&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/test.css" />
+    <link rel="stylesheet" href="/css/faq.css" />
+  </head>
+  <body>
+    <%- include('../includes/nav.ejs', {isLogged: isLogged, path: path}) %>
+    <main>
+      <section class="faq">
+        <div class="faq-container">
+          <div class="faq-section">
+            <h2 class="faq-heading">Frequently Asked Questions</h2>
+            <div class="questions-box">
+              <div class="question-container">
+                <div class="question-content">
+                  <div>
+                    <span class="number">01</span>
+                    <span class="question"
+                      >Who is stronger between Stalin and Spiderman?</span
+                    >
+                  </div>
+                  <ion-icon
+                    name="chevron-down-outline"
+                    class="expand-icon"
+                  ></ion-icon>
+                  <ion-icon
+                    name="chevron-up-outline"
+                    class="collapse-icon"
+                  ></ion-icon>
+                </div>
+                <div class="answer-content">
+                  <span class="answer">Who is Spiderman?</span>
+                </div>
+              </div>
+              <div class="question-container">
+                <div class="question-content">
+                  <div>
+                    <span class="number">02</span>
+                    <span class="question"
+                      >Who is stronger between Stalin and Spiderman?</span
+                    >
+                  </div>
+                  <ion-icon
+                    name="chevron-down-outline"
+                    class="expand-icon"
+                  ></ion-icon>
+                  <ion-icon
+                    name="chevron-up-outline"
+                    class="collapse-icon"
+                  ></ion-icon>
+                </div>
+                <div class="answer-content">
+                  <span class="answer">Who is Spiderman?</span>
+                </div>
+              </div>
+              <div class="question-container">
+                <div class="question-content">
+                  <div>
+                    <span class="number">03</span>
+                    <span class="question"
+                      >Who is stronger between Stalin and Spiderman?</span
+                    >
+                  </div>
+                  <ion-icon
+                    name="chevron-down-outline"
+                    class="expand-icon"
+                  ></ion-icon>
+                  <ion-icon
+                    name="chevron-up-outline"
+                    class="collapse-icon"
+                  ></ion-icon>
+                </div>
+                <div class="answer-content">
+                  <span class="answer">Who is Spiderman?</span>
+                </div>
+              </div>
+              <div class="question-container">
+                <div class="question-content">
+                  <div>
+                    <span class="number">04</span>
+                    <span class="question"
+                      >Who is stronger between Stalin and Spiderman?</span
+                    >
+                  </div>
+                  <ion-icon
+                    name="chevron-down-outline"
+                    class="expand-icon"
+                  ></ion-icon>
+                  <ion-icon
+                    name="chevron-up-outline"
+                    class="collapse-icon"
+                  ></ion-icon>
+                </div>
+                <div class="answer-content">
+                  <span class="answer">Who is Spiderman?</span>
+                </div>
+              </div>
+              <div class="question-container">
+                <div class="question-content">
+                  <div>
+                    <span class="number">05</span>
+                    <span class="question"
+                      >Who is stronger between Stalin and Spiderman?</span
+                    >
+                  </div>
+                  <ion-icon
+                    name="chevron-down-outline"
+                    class="expand-icon"
+                  ></ion-icon>
+                  <ion-icon
+                    name="chevron-up-outline"
+                    class="collapse-icon"
+                  ></ion-icon>
+                </div>
+                <div class="answer-content">
+                  <span class="answer">Who is Spiderman?</span>
+                </div>
+              </div>
+              <div class="question-container">
+                <div class="question-content">
+                  <div>
+                    <span class="number">06</span>
+                    <span class="question"
+                      >Who is stronger between Stalin and Spiderman?</span
+                    >
+                  </div>
+                  <ion-icon
+                    name="chevron-down-outline"
+                    class="expand-icon"
+                  ></ion-icon>
+                  <ion-icon
+                    name="chevron-up-outline"
+                    class="collapse-icon"
+                  ></ion-icon>
+                </div>
+                <div class="answer-content">
+                  <span class="answer">Who is Spiderman?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="aside">
+            <h2 class="faq-heading">Got a different question?</h2>
+            <p>Don't hesitate to send us a message</p>
+            <form class="question-form">
+              <div>
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Jordan Belfort"
+                  required
+                />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="hello@example.com"
+                  required
+                />
+              </div>
+              <div>
+                <label for="question">Your Question</label>
+                <textarea
+                  id="question"
+                  rows="5"
+                  placeholder="Who am I?"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include('../includes/footer.ejs') %>
+    <%- include('../includes/icon.ejs') %>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

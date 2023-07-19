@@ -1,0 +1,145 @@
+.faq {
+  margin-top: 9.6rem;
+  margin-bottom: 9.6rem;
+}
+
+.faq-container {
+  max-width: 125rem;
+  margin: 0 auto;
+  display: grid;
+  gap: 10rem;
+  grid-template-columns: 2fr 1fr;
+}
+
+.faq-heading {
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 2.4rem;
+  color: #054230;
+}
+
+.questions-box {
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eee;
+  padding: 1.5rem 2rem;
+  gap: 1.5rem;
+  transition: all 0.3s;
+}
+
+.question-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #a2a2a2;
+  margin-right: 5rem;
+}
+
+.question {
+  font-size: 2rem;
+  color: #054230;
+}
+
+.question:hover {
+  color: #076448;
+  cursor: pointer;
+}
+
+.expand-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #054230;
+}
+
+.collapse-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #054230;
+  display: none;
+}
+
+.expand-icon:hover,
+.collapse-icon:hover {
+  color: #076448;
+  cursor: pointer;
+}
+
+.answer {
+  font-size: 1.6rem;
+  padding-left: 5rem;
+  font-weight: 500;
+  color: #363636;
+}
+
+.answer-content {
+  display: none;
+}
+
+.answer-open .answer-content {
+  display: block;
+}
+
+.answer-open .collapse-icon {
+  display: inline-block;
+}
+
+.answer-open .expand-icon {
+  display: none;
+}
+
+/* ASIDE */
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  max-width: 30rem;
+}
+
+.aside p {
+  font-size: 1.6rem;
+  color: #06533c;
+  margin-bottom: 3rem;
+}
+
+.question-form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4rem;
+  gap: 2rem;
+}
+
+.question-form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.submit-btn {
+  align-self: start;
+  padding: 1rem 2rem;
+  background-color: #087454;
+  color: #f1f3f5;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: #0b956c;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  padding: 0.5rem 1rem;
+}

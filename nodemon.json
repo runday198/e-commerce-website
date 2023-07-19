@@ -1,0 +1,8 @@
+{
+  "env": {
+    "SEQUELIZE_SCHEMA": "newest",
+    "SEQUELIZE_USERNAME": "root",
+    "SEQUELIZE_PASSWORD": "123123....sS",
+    "PORT": "3000"
+  }
+}

@@ -1,0 +1,305 @@
+@media (max-width: 82em) {
+  .categories-container {
+    width: 110rem;
+  }
+  .category {
+    width: 35rem;
+    height: 25rem;
+  }
+}
+
+@media (max-width: 77em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 69em) {
+  .container {
+    max-width: 110rem;
+  }
+  .hero-heading {
+    font-size: 3.4rem;
+  }
+  .featured-container {
+    max-width: 110rem;
+  }
+
+  .trending-container {
+    width: 110rem;
+  }
+  .product-img {
+    height: 25rem;
+    width: 25rem;
+  }
+
+  .features-container {
+    width: 110rem;
+  }
+  .testimonials-container {
+    width: 110rem;
+  }
+  .footer-container {
+    max-width: 110rem;
+  }
+}
+
+@media (max-width: 64em) {
+  html {
+    font-size: 50%;
+    line-height: 1.4;
+  }
+  .statistics-container {
+    width: 100rem;
+  }
+}
+
+@media (max-width: 56em) {
+  .container {
+    max-width: 100rem;
+  }
+  .hero-heading {
+    font-size: 3.4rem;
+  }
+  .hero-image-container {
+    max-width: 55rem;
+  }
+
+  .featured-container {
+    max-width: 100rem;
+  }
+  .logo-img {
+    height: 3rem;
+  }
+
+  .categories-container {
+    width: 100rem;
+    gap: 1rem;
+  }
+  .category {
+    max-width: 32rem;
+    height: 25rem;
+  }
+
+  .trending-container {
+    width: 100rem;
+  }
+  .product-img {
+    height: 23rem;
+    width: 23rem;
+  }
+
+  .features-container {
+    width: 100rem;
+  }
+  .testimonials-container {
+    width: 100rem;
+  }
+  .footer-container {
+    max-width: 100rem;
+  }
+
+  .account-links {
+    display: none;
+  }
+}
+
+@media (max-width: 50em) {
+  html {
+    font-size: 43.75%;
+  }
+}
+
+@media (max-width: 44em) {
+  .container {
+    max-width: 85rem;
+  }
+  .hero-heading {
+    font-size: 2.8rem;
+  }
+  .hero-image-container {
+    max-width: 45rem;
+  }
+  .hero-text-container {
+    gap: 2.5rem;
+  }
+  .cta-btn:link,
+  .cta-btn:visited {
+    margin-left: 2.5rem;
+  }
+
+  .featured-container {
+    max-width: 85rem;
+  }
+  .logo-img {
+    height: 2.5rem;
+  }
+
+  .categories-container {
+    max-width: 85rem;
+  }
+  .category {
+    max-width: 26rem;
+    height: 25rem;
+  }
+
+  .category-header:link,
+  .category-header:visited {
+    font-size: 2rem;
+  }
+
+  .trending-container {
+    max-width: 85rem;
+  }
+  .product-img {
+    height: 20rem;
+    width: 20rem;
+  }
+
+  .features-container {
+    max-width: 85rem;
+  }
+
+  .testimonials-container {
+    max-width: 85rem;
+    grid-template-columns: 1fr;
+  }
+  .testimonial-text {
+    font-size: 1.8rem;
+    width: 60rem;
+  }
+
+  .statistics-container {
+    max-width: 85rem;
+  }
+
+  .footer-container {
+    gap: 7rem;
+    max-width: 85rem;
+  }
+}
+
+@media (max-width: 38em) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 95rem;
+  }
+  .hero-image-container {
+    max-width: 60rem;
+  }
+  .hero-text-container {
+    width: 60rem;
+  }
+
+  .categories-container {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    max-width: 65rem;
+    row-gap: 2.5rem;
+  }
+  .category {
+    max-width: 30rem;
+    width: 30rem;
+  }
+
+  .trending-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    max-width: 50rem;
+  }
+
+  .product-img {
+    height: 24rem;
+    width: 24rem;
+  }
+
+  .features-container {
+    grid-template-columns: 1fr 1fr;
+    max-width: 65rem;
+  }
+
+  .testimonials-container {
+    max-width: 65rem;
+  }
+
+  .testimonial-heading {
+    font-size: 2rem;
+  }
+
+  .testimonial-header {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+
+  .testimonial-text {
+    font-size: 1.6rem;
+  }
+
+  .statistics-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    row-gap: 2rem;
+    max-width: 65rem;
+  }
+
+  .logo-img {
+    height: 2rem;
+  }
+
+  .statistic-col {
+    font-size: 1.4rem;
+  }
+
+  .last--col {
+    grid-column: 1 / -1;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    max-width: 65rem;
+  }
+
+  .top-container {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 28em) {
+  .hero-img {
+    max-width: 50rem;
+  }
+
+  .categories-container {
+    max-width: 55rem;
+  }
+
+  .category {
+    max-width: 27rem;
+    width: 27rem;
+  }
+
+  .features-container {
+    max-width: 55rem;
+  }
+
+  .testimonials-container {
+    max-width: 55rem;
+  }
+
+  .statistics-container {
+    max-width: 55rem;
+  }
+
+  .shipping-offer,
+  .house-icon {
+    display: none;
+  }
+  .top-link {
+    margin-left: 2rem;
+  }
+}

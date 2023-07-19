@@ -1,0 +1,62 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/account.css">
+</head>
+<body>
+  <%- include('../includes/nav.ejs', {path: path, isLogged: isLogged}) %>
+
+  <div class="account-container">
+    <%- include('../includes/profile.ejs', {path: path}) %>
+    <main class="product-col">
+      <h2 class="profile-heading">Your Products</h2>
+      <% if (products.length > 0) { %>
+      <div class="product-grid">
+        <% for (let product of products) { %>
+        <div class="product-container">
+          <div class="image-box">
+            <img src="<%= product.imageUrl %>" alt="<%= product.title %>" class="product-image">
+          </div>
+            <div class="description-box">
+              <div>
+                <h2><a href="/product/<%= product.id %>" class="product-title"><%= product.title %></a></h2>
+                <div class="rating-container">
+                  <p class="price"><span>$</span><%= product.price %></p>
+                </div>
+              </div>
+              <p class="description"><%= product.shortDesc %></p>
+              <div class="button-box">
+                <a href="/edit-product/<%= product.id %>" class="product-btn">Edit</a>
+                <form action="/delete-product" method="post">
+                  <input type="hidden" name="productId" value="<%= product.id %>">
+                  <button type="submit" class="product-btn delete--btn">Delete</button>
+                </form>
+              </div>
+            </div>
+        </div>
+        <% } %>
+        <section class="pagination">
+          <% if (currentPage != 1 && previousPage != 1) { %>
+              <a href="/products?page=1">1</a>
+          <% } %>
+          <% if (hasPreviousPage) { %>
+              <a href="/products?page=<%= previousPage %>"><%= previousPage %></a>
+          <% } %>
+          <a href="/products?page=<%= currentPage %>"><%= currentPage %></a>
+          <% if (hasNextPage) {%>
+              <a href="/products?page=<%= nextPage %>"><%= nextPage %></a>
+          <% } %>
+          <% if (nextPage != lastPage && currentPage != lastPage) {%>
+              <a href="/products?page=<%= lastPage %>"><%= lastPage %></a>
+          <% } %> 
+      </section>
+      </div>
+      <% } else { %>
+        <h3>You have not added any products!</h3>
+        <% } %>
+    </main>
+  </div>
+
+
+  <%- include('../includes/footer.ejs') %>
+  <%- include('../includes/icon.ejs') %>
+</body>
+</html>

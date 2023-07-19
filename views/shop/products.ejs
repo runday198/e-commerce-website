@@ -1,0 +1,105 @@
+<%- include('../includes/head.ejs', {pageTitle: pageTitle}) %>
+<link rel="stylesheet" href="/css/account.css">
+
+<link rel="stylesheet" href="/css/store.css">
+</head>
+<body>
+  <%- include('../includes/nav.ejs', {isLogged: isLogged, path: path}) %>
+  <div class="store-container">
+    <aside class="category-container">
+      <h2 class="store-heading">Categories</h2>
+      <ul class="category-list">
+        <li>
+          <a href="/store/tech" class="category-link <%= path === '/tech' ? 'active' : '' %>">Tech</a>
+        </li>
+        <li>
+          <a href="/store/books" class="category-link <%= path === '/books' ? 'active' : '' %>">Books</a>
+        </li>
+        <li>
+          <a href="/store/home" class="category-link <%= path === '/home' ? 'active' : '' %>">Home Appliances</a>
+        </li>
+        <li>
+          <a href="/store/clothes" class="category-link <%= path === '/clothes' ? 'active' : '' %>">Clothes</a>
+        </li>
+        <li>
+          <a href="/store/toys" class="category-link <%= path === '/toys' ? 'active' : '' %>">Toys</a>
+        </li>
+        <li>
+          <a href="/store/fitness" class="category-link <%= path === '/fitness' ? 'active' : '' %>">Fitness</a>
+        </li>
+      </ul>
+    </aside>
+    <main>
+      <section class="store-section">
+        <h2 class="store-heading">Store</h2>
+        <% if (products.length > 0) { %>
+        <div class="product-grid">
+          <% for (let product of products) { %>
+          <div class="product-container">
+            <div class="image-box">
+              <img src="<%= product.imageUrl %>" alt="<%= product.title %>"
+              class="product-img">
+            </div>
+            <div class="description-box">
+              <div>
+                <h2><a href='/product-details/<%= product.id %>' class="product-title"><%= product.title %></a></h2>
+                <div class="rating-container">
+                  <p class="price"><span>$</span><%= product.price %></p>
+                </div>
+              </div>
+              <p class="description"><%= product.shortDesc %></p>
+
+              <div class="button-box">
+                <a href="/product-details/<%= product.id %>" class="product-btn">Details</a>
+                <form action="/cart" method="post">
+                  <input type="hidden" name="productId" value="<%= product.id %>">
+                  <button type="submit" class="product-btn delete--btn">Add To Cart</button> 
+                </form>
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <% if (category === false) { %>
+        <section class="pagination">
+          <% if (currentPage != 1 && previousPage != 1) { %>
+              <a href="/store?page=1">1</a>
+          <% } %>
+          <% if (hasPreviousPage) { %>
+              <a href="/store?page=<%= previousPage %>"><%= previousPage %></a>
+          <% } %>
+          <a href="/store?page=<%= currentPage %>"><%= currentPage %></a>
+          <% if (hasNextPage) {%>
+              <a href="/store?page=<%= nextPage %>"><%= nextPage %></a>
+          <% } %>
+          <% if (nextPage != lastPage && currentPage != lastPage) {%>
+              <a href="/store?page=<%= lastPage %>"><%= lastPage %></a>
+          <% } %> 
+      </section>
+      <% } else {%>
+        <section class="pagination">
+          <% if (currentPage != 1 && previousPage != 1) { %>
+            <a href="/store/<%= pageTitle %>?page=1">1</a>
+        <% } %>
+        <% if (hasPreviousPage) { %>
+            <a href="/store/<%= pageTitle %>?page=<%= previousPage %>"><%= previousPage %></a>
+        <% } %>
+        <a href="/store/<%= pageTitle %>?page=<%= currentPage %>"><%= currentPage %></a>
+        <% if (hasNextPage) {%>
+            <a href="/store/<%= pageTitle %>?page=<%= nextPage %>"><%= nextPage %></a>
+        <% } %>
+        <% if (nextPage != lastPage && currentPage != lastPage) {%>
+            <a href="/store/<%= pageTitle %>?page=<%= lastPage %>"><%= lastPage %></a>
+        <% } %> 
+        </section>
+        <% } %>
+        <% } else {%>
+          <h4>No products to display!</h4>
+          <% } %>
+      </section>  
+    </main>
+  </div>
+
+  <%- include('../includes/footer.ejs') %>
+  <%- include('../includes/icon.ejs') %>
+</body>

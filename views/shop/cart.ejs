@@ -1,0 +1,52 @@
+<%- include('../includes/head.ejs', {pageTitle: pageTitle}) %>
+
+<link rel="stylesheet" href="/css/account.css">
+
+</head>
+<body>
+  <%- include('../includes/nav.ejs', {path: path, isLogged: isLogged}) %>
+  <div class="account-container">
+    <%- include('../includes/profile.ejs', {path: path}) %>
+    <main class="product-col">
+      <h2 class="profile-heading">Your Cart</h2>
+      <% if (products.length > 0) { %>
+      <div class="product-grid">
+        <% for (let product of products) { %>
+        <div class="product-container">
+          <div class="image-box">
+            <img src="<%= product.imageUrl %>" alt="<%= product.title %>" class="product-image">
+          </div>
+            <div class="description-box">
+              <div>
+                <h2><a href="/product/<%= product.id %>" class="product-title"><%= product.title %></a></h2>
+                <div class="rating-container">
+                  <p class="price"><span>$</span><%= product.price %></p>
+                  <ion-icon name="star-outline" class="star-icon"></ion-icon>
+                  <span>4.5 (122)</span>
+                  
+                </div>
+              </div>
+              <p class="description"><%= product.shortDesc %></p>
+              <p class="quantity">Quantity &dash; <%= product.cartItem.quantity %></p>
+              <div class="button-box">
+                <form action="/delete-cart-product" method="post">
+                  <input type="hidden" name="productId" value="<%= product.id %>">
+                  <button type="submit" class="product-btn delete--btn ">Delete</button>
+                </form>
+              </div>
+            </div>
+        </div>
+        <% } %>
+      </div>
+
+      <form action="/orders" method="post" class="order-form">
+        <button class="product-btn delete--btn">Order</button>
+      </form>
+      <% } else { %>
+        <h3>Your Cart is Empty</h3>
+        <% } %>
+    </main>
+  </div>
+  <%- include('../includes/footer.ejs') %>
+  <%- include('../includes/icon.ejs') %>
+</body>

@@ -1,0 +1,36 @@
+.star {
+  width: 2.4rem;
+  height: 2.4rem;
+  fill: #ccc;
+}
+
+.stars {
+  margin-top: 1rem;
+  padding: 0.2rem;
+  display: flex;
+  cursor: pointer;
+}
+
+.stars:hover .star {
+  fill: #ffd43b;
+}
+
+.stars .star:hover {
+  fill: #ffd43b;
+}
+
+.stars .star:hover ~ .star {
+  fill: #ccc;
+}
+
+.active {
+  fill: #ffd43b;
+}
+
+.stars.disabled {
+  pointer-events: none;
+}
+
+.id {
+  display: none;
+}

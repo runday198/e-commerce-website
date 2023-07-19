@@ -1,0 +1,99 @@
+<%- include('../includes/head.ejs', {pageTitle: pageTitle}) %>
+    <link rel="stylesheet" href="/css/faq.css">
+    <link rel="stylesheet" href="/css/login.css">
+  </head>
+  <body>
+    <%- include('../includes/nav.ejs', {isLogged: isLogged, path: path}) %>
+
+    <main>
+      <section class="login-section">
+        <div class="login-container">
+          <h2 class="faq-heading"><%= path === '/signup' ? 'Sign Up' : 'Log In' %></h2>
+          <% if (validation) {%>
+          <form class="login-form" action="<%= path === '/login' ? '/login' : '/signup' %>" method="post">
+            <% if (path === '/signup') {%>
+            <div>
+              <label for="name">Username</label>
+              <input type="text" id="name" name="name" value="<%= oldInput.name %>">
+            </div>
+            <% } %>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" value="<%= oldInput.email %>">
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" value="<%= oldInput.password %>">
+            </div>
+            <% if (path === '/signup') {%>
+              <div>
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirmPassword" value="<%= oldInput.confirmPassword %>">
+              </div>
+              <% } %>
+            <button type="submit" class="submit-btn">
+              <% if (path === '/signup') {%>
+                Sign Up
+                <% } else {%>
+                  Log In
+                  <% } %>
+            </button>
+          </form>
+          <% } else {%>
+            <form class="login-form" action="<%= path === '/login' ? '/login' : '/signup' %>" method="post">
+              <% if (path === '/signup') {%>
+              <div>
+                <label for="name">Username</label>
+                <input type="text" id="name" name="name" value="<%= oldInput.name %>"
+                class="<% if (errors.name) {%>error<% } %>">
+                <% if (errors.name) {%> 
+                  <p class="error-msg"><%= errors.name.msg %></p>
+                <% } %>
+              </div>
+              <% } %>
+              <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="<%= oldInput.email %>"
+                class="<% if (errors.email) {%>error<% } %>">
+                <% if (errors.email) {%> 
+                  <p class="error-msg"><%= errors.email.msg %></p>
+                <% } %>
+              </div>
+              <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" value="<%= oldInput.password %>"
+                class="<% if (errors.password || errors.confirmPassword) {%>error<% } %>">
+                <% if (errors.password) {%> 
+                  <p class="error-msg"><%= errors.password.msg %></p>
+                <% } %>
+              </div>
+              <% if (path === '/signup') {%>
+                <div>
+                  <label for="confirm-password">Confirm Password</label>
+                  <input type="password" id="confirm-password" name="confirmPassword" value="<%= oldInput.confirmPassword %>"
+                  class="<% if (errors.confirmPassword) {%>error<% } %>">
+                  <% if (errors.confirmPassword) {%> 
+                    <p class="error-msg"><%= errors.confirmPassword.msg %></p>
+                  <% } %>
+                </div>
+                <% } %>
+              <button type="submit" class="submit-btn">
+                <% if (path === '/signup') {%>
+                  Sign Up
+                  <% } else {%>
+                    Log In
+                    <% } %>
+              </button>
+            </form>
+          <% } %>
+          <% if (path === '/login') {%>
+            <a href="/reset" class="forgot-pass-btn">Forgot Password</a>
+            <% } else {%>
+              <a href="/login" class="forgot-pass-btn">Already have an account</a>
+              <% } %>
+        </div>
+      </section>
+    </main>
+    <%- include('../includes/footer.ejs') %>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<%- include('../includes/head.ejs', {pageTitle: pageTitle}) %>
+<link rel="stylesheet" href="/css/account.css">
+</head>
+<body>
+  <%- include('../includes/nav.ejs', {path: path, isLogged: isLogged}) %>
+  <div class="account-container">
+    <%- include('../includes/profile.ejs', {path: path}) %>
+    <main class="product-col">
+      <h2 class="profile-heading">Your Orders</h2>
+      <% if (orders.length > 0) { %>
+      <div class="product-grid">
+        <% for (let order of orders) {%>
+        <div class="order-box">
+          <h4 class="order-heading">Order #<%= order.id %></h4>
+          <ul class="order-products-list">
+            <% order.products.forEach(product => { %>
+            <li>
+              <div class="order-product">
+                <a href="/product-details/<%= product.id %>" class="product-link"><%= product.title %></a>
+                <span>Quantity &dash; <%= product.orderItem.quantity %></span>
+                <span>Total Price &dash; $<%= product.totalPrice %></span>
+              </div>
+            </li>
+            <% }) %>
+          </ul>
+          <p class="total-price">Total &dash; $<%= order.totalPrice %></p>
+        </div>
+        <% } %>
+      </div>
+      <section class="pagination">
+        <% if (currentPage != 1 && previousPage != 1) { %>
+            <a href="/orders?page=1">1</a>
+        <% } %>
+        <% if (hasPreviousPage) { %>
+            <a href="/orders?page=<%= previousPage %>"><%= previousPage %></a>
+        <% } %>
+        <a href="/orders?page=<%= currentPage %>"><%= currentPage %></a>
+        <% if (hasNextPage) {%>
+            <a href="/orders?page=<%= nextPage %>"><%= nextPage %></a>
+        <% } %>
+        <% if (nextPage != lastPage && currentPage != lastPage) {%>
+            <a href="/orders?page=<%= lastPage %>"><%= lastPage %></a>
+        <% } %> 
+    </section>
+      <% } else { %>
+        <h4>You have no orders</h4>
+        <% } %>
+    </main>
+  </div>
+
+
+  <%- include('../includes/footer.ejs') %>
+  <%- include('../includes/icon.ejs') %>
+</body>
+</html>

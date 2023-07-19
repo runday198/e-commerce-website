@@ -1,0 +1,42 @@
+<%- include('../includes/head.ejs', {pageTitle: pageTitle}) %>
+<link rel="stylesheet" href="/css/account.css">
+</head>
+<body>
+  <%- include('../includes/nav.ejs', {path: path, isLogged: isLogged}) %>
+  <div class="account-container">
+    <%- include('../includes/profile.ejs', {path: path}) %>
+    <main class="product-col">
+      <h2 class="profile-heading">Username</h2>
+      <h4>General Account Settings</h4>
+      <ul class="settings-list">
+        <li>
+          <div class="setting-container">
+            <div class="setting-name-container">
+              <h2 class="setting-name">Username</h2>
+            </div>
+            <div  class="account-info-container">
+              <span><%= user.name %></span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="setting-container">
+            <div class="setting-name-container">
+              <h2 class="setting-name">Email Address</h2>
+            </div>
+            <div class="account-info-container">
+              <span><%= user.email %></span>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="setting-container">
+            <a href="/edit-account" class="product-btn"">Edit</a>
+          </div>
+        </li>
+      </ul>
+    </main>
+  </div>
+  <%- include('../includes/footer.ejs') %>
+  <%- include('../includes/icon.ejs') %>
+</body>

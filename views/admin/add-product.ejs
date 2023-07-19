@@ -1,0 +1,131 @@
+<%- include('../includes/head.ejs', {pageTitle: pageTitle}) %>
+<link rel="stylesheet" href="/css/account.css">
+</head>
+<body>
+  <%- include('../includes/nav.ejs', {path: path, isLogged: isLogged}) %>
+
+  <div class="account-container">
+    <%- include('../includes/profile.ejs', {path: path}) %>
+    <main class="product-col">
+      <div class="add-product-container">
+        <h2 class="profile-heading">Fill in the form</h2>
+        <% if (validation) {%>
+        <form action="<%= path === '/edit-product' ? '/edit-product' : '/add-product' %>" method="post" class="product-form" enctype="multipart/form-data">
+          <% if (path === '/edit-product') {%>
+          <input type="hidden" value="<%= product.id %>" name="productId">
+            <% } %>
+          <div> 
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" value="<% if (path === '/edit-product') {%><%= product.title %><% } %>">
+          </div>
+          <div>
+            <label for="image">Image</label>
+            <input type="file" id="image" name="image" >
+          </div>
+          <div>
+            <label for="price">Price ($)</label>
+            <input type="number" step="0.01" id="price" name="price"  value="<% if (path === '/edit-product') {%><%= product.price %><% } %>">
+          </div>
+          <div>
+            <label for="quantity">Quantity</label>
+            <input type="number" step="1" id="quantity" name="quantity"  value="<% if (path === '/edit-product') {%><%= product.storageQuantity %><% } %>">
+          </div>
+          <div>
+            <label for="shortDesc">Short Description</label>
+            <textarea rows="4" id="shortDesc" name="shortDesc" ><% if (path === '/edit-product') {%><%= product.shortDesc %> <% } %></textarea>
+          </div>
+          <div>
+            <label for="fullDesc">Full Description</label>
+            <textarea rows="7" id="fullDesc" name="fullDesc" ><% if (path === '/edit-product') {%><%= product.fullDesc %> <% } %></textarea>
+          </div>
+          <div>
+            <label for="category">Category</label>
+            <select id="category" name="category">
+              <option value=""></option>
+              <option value="toys">Toys</option>
+              <option value="tech">Tech</option>
+              <option value="books">Books</option>
+              <option value="home">Home Appliances</option>
+              <option value="clothes">Clothes</option>
+              <option value="fitness">Fitness</option>
+            </select>
+          </div>
+          <div>
+            <button class="product-form--btn" type="submit"><% if (path === '/edit-product') {%> Edit Product <% } else { %> Add Product <% } %></button>
+          </div>
+        </form>
+        <% } else { %>
+          <form action="<%= path === '/edit-product' ? '/edit-product' : '/add-product' %>" method="post" class="product-form" enctype="multipart/form-data">
+            <% if (path === '/edit-product') {%>
+            <input type="hidden" value="<%= product.id %>" name="productId">
+              <% } %>
+            <div> 
+              <label for="title">Title</label>
+              <input type="text" id="title" name="title" value="<%= oldInput.title %>" class="<% if (errors.title) { %>error<% } %>">
+              <% if (errors.title) {%> 
+                <p class="error-msg"><%= errors.title.msg %></p>
+              <% } %>
+            </div>
+            <div>
+              <label for="image">Image</label>
+              <input type="file" id="image" name="image" class="<% if (errors.image) { %>error<% } %>">
+              <% if (errors.image) {%> 
+                <p class="error-msg"><%= errors.image.msg %></p>
+              <% } %>
+            </div>
+            <div>
+              <label for="price">Price ($)</label>
+              <input type="number" step="0.1" id="price" name="price"  value="<%= oldInput.price %>" class="<% if (errors.price) { %>error<% } %>">
+              <% if (errors.price) {%> 
+                <p class="error-msg"><%= errors.price.msg %></p>
+              <% } %>
+            </div>
+            <div>
+              <label for="quantity">Quantity</label>
+              <input type="number" step="1" id="quantity" name="quantity"  value="<%= oldInput.quantity %>" class="<% if (errors.quantity) { %>error<% } %>">
+              <% if (errors.quantity) {%> 
+                <p class="error-msg"><%= errors.quantity.msg %></p>
+              <% } %>
+            </div>
+            <div>
+              <label for="shortDesc">Short Description</label>
+              <textarea rows="3" id="shortDesc" name="shortDesc" class="<% if (errors.shortDesc) { %>error<% } %>"><%= oldInput.shortDesc %></textarea>
+              <% if (errors.shortDesc) {%> 
+                <p class="error-msg"><%= errors.shortDesc.msg %></p>
+              <% } %>
+            </div>
+            <div>
+              <label for="fullDesc">Full Description</label>
+              <textarea rows="7" id="fullDesc" name="fullDesc" class="<% if (errors.fullDesc) { %>error<% } %>"><%= oldInput.fullDesc %></textarea>
+              <% if (errors.fullDesc) {%> 
+                <p class="error-msg"><%= errors.fullDesc.msg %></p>
+              <% } %>
+            </div>
+            <div>
+              <label for="category">Category</label>
+              <select id="category" name="category" class="<% if (errors.category) { %>error<% } %>">
+                <option value=""></option>
+                <option value="toys">Toys</option>
+                <option value="tech">Tech</option>
+                <option value="books">Books</option>
+                <option value="home">Home Appliances</option>
+                <option value="clothes">Clothes</option>
+                <option value="fitness">Fitness</option>
+              </select>
+              <% if (errors.category) {%> 
+                <p class="error-msg"><%= errors.category.msg %></p>
+              <% } %>
+            </div>
+            <div>
+              <button class="product-form--btn" type="submit"><% if (path === '/edit-product') {%> Edit Product <% } else { %> Add Product <% } %></button>
+            </div>
+          </form>
+        <% } %>
+      </div>
+    </main>
+  </div>
+
+  <%- include('../includes/footer.ejs') %>
+  <%- include('../includes/icon.ejs') %>
+</body>
+</html>
